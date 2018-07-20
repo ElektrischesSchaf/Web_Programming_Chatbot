@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Chat Bot</title>
+    
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+	<div class="chatbox">
+
+		<div id="content">
+
+
+		</div>
+		<div class="chat-form">
+			<input id="chat_text"  type="text">
+               
+			<a id="chat_btn">Send</a>
+		</div>
+	</div>
+
+
+    <script>
+        $(function () {
+            let username = "human";
+            $('#chat_btn').on('click', function () {
+             
+                let message = $('#chat_text').val();
+                let messageorignal = message;
+               
+                let message_template0 = `<div class="chat self">
+                                        <div class ="user-photo"></div>
+                                        <p class ="chat-message">${messageorignal}</p>
+                                         </div>`;
+                $('#content').append(message_template0);
+                $.post('/message', { 'username': username, 'message': message }, function () {
+                });
+            });
+             //Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('your_pusher_key', {
+                cluster: 'ap1',
+                encrypted: true
+            });
+
+            var channel = pusher.subscribe('chat-channel');
+
+            channel.bind('new-message', function (data) {
+                // alert(data.message);
+                let name = data.username;
+                let message = data.message;
+                let message_template = `<div class="chat friend">
+                                        <div class ="user-photo"></div>
+                                        <p class ="chat-message">${message}</p>
+                                         </div>`;
+                $('#content').append(message_template);
+            });
+
+        });
+    </script>
+</body>
+</html>

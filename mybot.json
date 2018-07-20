@@ -1,0 +1,24 @@
+{
+	
+    "List":[{
+		"question":"你的功能是什麼?",
+		"answer":"告訴使用者城市的天氣預報"
+	},
+	{
+		"question":"如何使用?",
+		"answer":"輸入Weather+城市英文名稱，例如Weather Taipei"
+	},
+	{
+		"question":"你是用什麼網路框架?",
+		"answer":"Flask"
+	},
+	{
+		"question":"自我介紹",
+		"answer":"我是OpenWeatherMap 天氣預報機器人"
+	},
+	{
+		"question":"創造者",
+		"answer":"Elektrisches Schaf"
+	}
+	]
+}
