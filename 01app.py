@@ -25,8 +25,8 @@ def index():
 
 @app.route('/message',methods =["POST"])
 def message():
-    #url='http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=cee747de1d5edc4e6185d0cde4bee2c0'
-    url='http://api.openweathermap.org/data/2.5/forecast?q={}&units=metric&appid=cee747de1d5edc4e6185d0cde4bee2c0'
+    #url='http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=***'
+    url='http://api.openweathermap.org/data/2.5/forecast?q={}&units=metric&appid=***'
     #city='Taipei'
     #r=requests.get(url.format(city)).json()
     try:
