@@ -1,5 +1,6 @@
 # Web_Programming_Chatbot  
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0004--1854--4003-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0004-1854-4003)
+[![License](https://img.shields.io/github/license/ElektrischesSchaf/Web_Programming_Chatbot?color=750014)](./LICENSE)
 ## Using python,flask , html, javascript, ajax, and Pusher  
 ***
 ![intro](https://github.com/ElektrischesSchaf/Web_Programming_Chatbot/blob/master/snapshot/2.JPG)  
